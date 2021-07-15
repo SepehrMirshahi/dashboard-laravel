@@ -32,7 +32,31 @@
                 <li class="nav-item active  ">
                     <a class="nav-link" href="javascript:void(0)">
                         <i class="material-icons">dashboard</i>
-                        <p>Dashboard</p>
+                        <span>داشبورد</span>
+                    </a>
+                </li>
+                <li class="nav-item active  ">
+                    <a class="nav-link" href="javascript:void(0)">
+                        <i class="material-icons">edit</i>
+                        <span>ویرایش اطلاعات</span>
+                    </a>
+                </li>
+                <li class="nav-item active  ">
+                    <a class="nav-link" href="javascript:void(0)">
+                        <i class="material-icons">quiz</i>
+                        <span>آزمون های شما</span>
+                    </a>
+                </li>
+                <li class="nav-item active  ">
+                    <a class="nav-link" href="javascript:void(0)">
+                        <i class="material-icons">assignment</i>
+                        <span>رزومه شما</span>
+                    </a>
+                </li>
+                <li class="nav-item active  ">
+                    <a class="nav-link" href="javascript:void(0)">
+                        <i class="material-icons">video_library</i>
+                        <span>ویدئو های شما</span>
                     </a>
                 </li>
                 <!-- your sidebar here -->
@@ -70,7 +94,26 @@
         <!-- End Navbar -->
         <div class="content">
             <div class="container-fluid">
-                <!-- your content here -->
+                <div class="row">
+                    <div class="col-md-8">
+                        @yield('content')
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card card-profile">
+                            <div class="card-avatar">
+                                <img class="img" src="../assets/img/faces/marc.jpg" />
+                            </div>
+                            <div class="card-body">
+                                <h6 class="card-category">CEO / Co-Founder</h6>
+                                <h4 class="card-title">Alec Thompson</h4>
+                                <p class="card-description">
+                                    Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
+                                </p>
+                                <a href="#pablo" class="btn btn-primary btn-round">Follow</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <footer class="footer">
