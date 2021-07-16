@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -25,37 +26,46 @@ class UserController extends Controller
         $user->save();
         Auth::login($user);
         if (isset(Auth::user()->email))
-        return view('dashboard.dashboard');
+            return view('dashboard.dashboard');
     }
-    public function auth(Request $request){
-        $validated=$request->validate([
+
+    public function auth(Request $request)
+    {
+        $validated = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
-        if(Auth::attempt($validated)){
+        if (Auth::attempt($validated)) {
             $request->session()->regenerate();
             return redirect()->intended('/');
-        }
-        else{
+        } else {
             return redirect('login');
         }
     }
-    public function edit (Request $request){
-        $validated=$request->validate([
+
+    public function edit(Request $request)
+    {
+        $validated = $request->validate([
             'name' => 'required|min:3',
             'email' => 'required|email',
             'phone' => 'required|numeric|digits:11',
-            'address' => 'required',
-            'zipCode' => 'required|numeric|digits:10',
-            'CC' => 'required|numeric|digits:16'
+            'address' => 'min:3|nullable',
+            'zipCode' => 'numeric|digits:10|nullable',
+            'CC' => 'numeric|digits:16|nullable',
+            'avatar' => 'image|nullable'
         ]);
-        $user=User::find(Auth::user()->id)->update([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'phone' => $validated['phone'],
-            'address' => $validated['address'],
-            'zipCode' => $validated['zipCode'],
-            'CC' => $validated['CC']
-        ]);
+        $update = array_slice($validated, 0, 6);
+        $user = User::find(Auth::user()->id);
+        foreach ($validated as $key => $value) {
+            $user->$key = $value;
+        }
+        if ($request->file('avatar') != null) {
+            $picExt = $request->file('avatar')->getClientOriginalExtension();
+            $avatarName = uniqid() . '.' . $picExt;
+            $path = $request->file('avatar')->storeAs('public/avatars', $avatarName);
+            $user->avatar = $avatarName;
+        }
+        $user->save();
+        return redirect()->back();
     }
 }

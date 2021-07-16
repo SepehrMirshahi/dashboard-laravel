@@ -12,13 +12,13 @@
     <div class="sidebar-wrapper">
         <ul class="nav">
             <li class="nav-item active  ">
-                <a class="nav-link" href="javascript:void(0)">
+                <a class="nav-link" href="{{url('/')}}">
                     <i class="material-icons">dashboard</i>
                     <span>داشبورد</span>
                 </a>
             </li>
             <li class="nav-item active  ">
-                <a class="nav-link" href="javascript:void(0)">
+                <a class="nav-link" href="{{url('/edit')}}">
                     <i class="material-icons">edit</i>
                     <span>ویرایش اطلاعات</span>
                 </a>

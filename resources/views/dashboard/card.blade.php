@@ -1,6 +1,6 @@
 <div class="card card-profile">
     <div class="card-avatar">
-        <img class="img" src="../assets/img/faces/marc.jpg"/>
+        <img class="img" src="{{asset('storage/avatars/'.\Illuminate\Support\Facades\Auth::user()->avatar)}}"/>
     </div>
     <div class="card-body">
         <h4 class="card-title">{{\Illuminate\Support\Facades\Auth::user()->name}}</h4>

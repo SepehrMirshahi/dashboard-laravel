@@ -19,9 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('name');
             $table->integer('zipCode')->nullable();
-            $table->integer('phone');
+            $table->string('phone');
             $table->string('address')->nullable();
-            $table->integer('CC')->nullable();
+            $table->string('CC')->nullable();
             $table->string('avatar')->default('NoPhoto.png');
             $table->timestamps();
         });

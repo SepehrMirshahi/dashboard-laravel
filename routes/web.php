@@ -28,3 +28,5 @@ Route::get('/edit',function (){
 
 Route::post('/user/add',[UserController::class,'add']);
 Route::post('/user/auth',[UserController::class,'auth']);
+Route::post('/user/edit',[UserController::class,'edit']);
+
