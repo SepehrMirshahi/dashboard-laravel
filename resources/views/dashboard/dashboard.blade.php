@@ -1,6 +1,3 @@
-@if(!isset(\Illuminate\Support\Facades\Auth::user()->name))
-    <script>window.location = "/login";</script>
-@else
 @extends('dashboard.layout')
 @section('title')
     داشبورد
@@ -48,4 +45,3 @@
 @section('rightCard')
     @include('dashboard.card')
 @endsection
-@endif

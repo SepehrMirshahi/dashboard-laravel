@@ -15,7 +15,7 @@ use \App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('dashboard.dashboard');
-});
+})->middleware('access');
 Route::get('/signup',function (){
     return view('authentication.signup');
 });
@@ -24,7 +24,7 @@ Route::get('/login',function (){
 });
 Route::get('/edit',function (){
     return view('dashboard.edit');
-});
+})->middleware('access');
 
 Route::post('/user/add',[UserController::class,'add']);
 Route::post('/user/auth',[UserController::class,'auth']);
