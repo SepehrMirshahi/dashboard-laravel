@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->integer('phone');
             $table->string('address')->nullable();
             $table->integer('CC')->nullable();
-            $table->string('avatar')->nullable();
+            $table->string('avatar')->default('NoPhoto.png');
             $table->timestamps();
         });
     }

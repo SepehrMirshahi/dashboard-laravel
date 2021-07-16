@@ -22,5 +22,9 @@ Route::get('/signup',function (){
 Route::get('/login',function (){
     return view('authentication.login');
 });
+Route::get('/edit',function (){
+    return view('dashboard.edit');
+});
+
 Route::post('/user/add',[UserController::class,'add']);
 Route::post('/user/auth',[UserController::class,'auth']);
