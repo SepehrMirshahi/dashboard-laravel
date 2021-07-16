@@ -1,4 +1,10 @@
+@if(!isset(\Illuminate\Support\Facades\Auth::user()->name))
+    <script>window.location = "/login";</script>
+@else
 @extends('dashboard.layout')
+@section('title')
+    داشبورد
+@endsection
 @section('content')
     <div class="row">
         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
@@ -39,3 +45,7 @@
         </div>
     </div>
 @endsection
+@section('rightCard')
+    @include('dashboard.card')
+@endsection
+@endif

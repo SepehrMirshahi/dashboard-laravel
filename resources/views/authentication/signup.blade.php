@@ -1,12 +1,8 @@
 @extends('authentication.layout')
+@section('title')
+    عضویت
+@endsection
 @section('content')
-    @if($errors->any())
-        <div class="alert alert-danger alert-important">
-            <ul>
-                {!! implode('</li><li>',$errors->all()) !!}
-            </ul>
-        </div>
-    @endif
     <form enctype="multipart/form-data"  method="post" action="{{url('/user/add')}}">
         @csrf
         <div class="form-group">
@@ -25,6 +21,7 @@
             <label for="phone" class="text-right">تلفن همراه</label>
             <input type="tel" id="phone" name="phone" class="form-control">
         </div>
+        <p>قبلا عضو شده اید؟ <a href="/login">وارد شوید!</a></p>
         <div>
             <button type="submit" class="btn btn-primary btn-lg">ثبت نام</button>
         </div>

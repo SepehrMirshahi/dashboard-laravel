@@ -1,4 +1,7 @@
 @extends('authentication.layout')
+@section('title')
+    ورود
+@endsection
 @section('content')
     @if($errors->any())
         <div class="alert alert-danger alert-important">
@@ -17,6 +20,7 @@
             <label for="pass" class="text-right">رمز عبور</label>
             <input type="password" id="pass" name="password" class="form-control">
         </div>
+        <p>عضو نیستید؟ <a href="/signup">ثبت نام کنید!</a></p>
         <div>
             <button type="submit" class="btn btn-primary btn-lg">ورود</button>
         </div>

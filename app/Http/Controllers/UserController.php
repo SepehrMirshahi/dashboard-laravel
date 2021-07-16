@@ -36,5 +36,26 @@ class UserController extends Controller
             $request->session()->regenerate();
             return redirect()->intended('/');
         }
+        else{
+            return redirect('login');
+        }
+    }
+    public function edit (Request $request){
+        $validated=$request->validate([
+            'name' => 'required|min:3',
+            'email' => 'required|email',
+            'phone' => 'required|numeric|digits:11',
+            'address' => 'required',
+            'zipCode' => 'required|numeric|digits:10',
+            'CC' => 'required|numeric|digits:16'
+        ]);
+        $user=User::find(Auth::user()->id)->update([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'phone' => $validated['phone'],
+            'address' => $validated['address'],
+            'zipCode' => $validated['zipCode'],
+            'CC' => $validated['CC']
+        ]);
     }
 }
