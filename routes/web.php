@@ -33,6 +33,11 @@ Route::group(['middleware' => 'access'], function () {
         return view('dashboard.addQuiz');
     });
     Route::post('/quiz/add',[StuffController::class, 'addQuiz']);
+    Route::get('/movie',[StuffController::class, 'movie']);
+    Route::get('/movie/add', function () {
+        return view('dashboard.addMovie');
+    });
+    Route::post('/movie/add',[StuffController::class, 'addMovie']);
 });
 Route::post('/user/add', [UserController::class, 'add']);
 Route::post('/user/auth', [UserController::class, 'auth']);

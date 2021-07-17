@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item active  ">
-                <a class="nav-link" href="/quiz">
+                <a class="nav-link" href="{{url('/quiz')}}">
                     <i class="material-icons">quiz</i>
                     <span>آزمون های شما</span>
                 </a>
@@ -36,7 +36,7 @@
                 </a>
             </li>
             <li class="nav-item active  ">
-                <a class="nav-link" href="javascript:void(0)">
+                <a class="nav-link" href="{{url('/movie')}}">
                     <i class="material-icons">video_library</i>
                     <span>ویدئو های شما</span>
                 </a>
