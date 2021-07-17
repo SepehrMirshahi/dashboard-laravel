@@ -29,6 +29,10 @@ Route::group(['middleware' => 'access'], function () {
         return view('dashboard.edit');
     });
     Route::get('/quiz',[StuffController::class, 'quiz']);
+    Route::get('/quiz/add', function () {
+        return view('dashboard.addQuiz');
+    });
+    Route::post('/quiz/add',[StuffController::class, 'addQuiz']);
 });
 Route::post('/user/add', [UserController::class, 'add']);
 Route::post('/user/auth', [UserController::class, 'auth']);

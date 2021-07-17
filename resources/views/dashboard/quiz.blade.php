@@ -1,6 +1,6 @@
 @extends('dashboard.layout')
 @section('title')
-    داشبورد
+    آزمون ها
 @endsection
 @section('content')
     @if($quizzes->count() > 0)
@@ -29,7 +29,7 @@
             <h4 class="text-center">تا کنون آزمونی ثبت نشده است</h4>
         </div>
     @endif
-    <button class="btn btn-lg btn-primary">افزودن آزمون</button>
+    <a class="btn btn-lg btn-primary" href="{{url('quiz/add')}}">افزودن آزمون</a>
 @endsection
 @section('rightCard')
     @include('dashboard.card')

@@ -4,13 +4,6 @@
 @endsection
 @section('content')
     <form enctype="multipart/form-data" method="post" action="{{url('/user/edit')}}">
-        @if($errors->any())
-            <div class="alert alert-danger alert-important">
-                <ul>
-                    {!! implode('</li><li>',$errors->all()) !!}
-                </ul>
-            </div>
-        @endif
         @csrf
         <div class="form-group">
             <label for="name" class="text-right">نام و نام خانوادگی</label>
