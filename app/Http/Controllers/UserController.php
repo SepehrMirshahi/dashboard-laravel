@@ -68,4 +68,8 @@ class UserController extends Controller
         $user->save();
         return redirect()->back();
     }
+    public function logout(){
+        Auth::logout();
+        return redirect('/login');
+    }
 }

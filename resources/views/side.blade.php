@@ -1,4 +1,4 @@
-<div class="sidebar" data-color="purple" data-background-color="black" data-image="./assets/img/sidebar-2.jpg">
+<div class="sidebar" data-color="purple" data-background-color="black">
     <!--
     Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -24,7 +24,7 @@
                 </a>
             </li>
             <li class="nav-item active  ">
-                <a class="nav-link" href="javascript:void(0)">
+                <a class="nav-link" href="/quiz">
                     <i class="material-icons">quiz</i>
                     <span>آزمون های شما</span>
                 </a>
@@ -42,7 +42,7 @@
                 </a>
             </li>
             <li class="nav-item active  ">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="/logout">
                     <i class="material-icons">logout</i>
                     <span>خروج از حساب</span>
                 </a>
