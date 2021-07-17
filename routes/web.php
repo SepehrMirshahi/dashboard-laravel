@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\UserController;
+use \App\Http\Controllers\StuffController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,9 +28,7 @@ Route::group(['middleware' => 'access'], function () {
     Route::get('/edit', function () {
         return view('dashboard.edit');
     });
-    Route::get('/quiz',function (){
-        return view('dashboard.quiz');
-    });
+    Route::get('/quiz',[StuffController::class, 'quiz']);
 });
 Route::post('/user/add', [UserController::class, 'add']);
 Route::post('/user/auth', [UserController::class, 'auth']);
