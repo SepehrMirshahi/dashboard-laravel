@@ -38,6 +38,11 @@ Route::group(['middleware' => 'access'], function () {
         return view('dashboard.addMovie');
     });
     Route::post('/movie/add',[StuffController::class, 'addMovie']);
+    Route::get('/resume',[StuffController::class,'resume']);
+    Route::get('/resume/edit',function (){
+        return view('dashboard.editResume');
+    });
+    Route::post('/resume',[StuffController::class,'editResume']);
 });
 Route::post('/user/add', [UserController::class, 'add']);
 Route::post('/user/auth', [UserController::class, 'auth']);

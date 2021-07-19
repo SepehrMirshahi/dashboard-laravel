@@ -32,8 +32,8 @@ class StuffController extends Controller
 
     public function movie()
     {
-        $movies=User::find(Auth::user()->id)->movies()->get();
-        return view('dashboard.movies',compact('movies'));
+        $movies = User::find(Auth::user()->id)->movies()->get();
+        return view('dashboard.movies', compact('movies'));
     }
 
     public function addMovie(Request $request)
@@ -51,5 +51,19 @@ class StuffController extends Controller
         $movie->address = $vidname;
         $movie->save();
         return redirect('/movie');
+    }
+
+    public function resume(){
+        $resume=User::find(Auth::user()->id)->resume;
+        return view('dashboard.resume',compact('resume'));
+    }
+
+    public function editResume(Request $request)
+    {
+        $validated=$request->validate(['resume'=>'required']);
+        $user=User::find(Auth::user()->id);
+        $user->resume=$validated['resume'];
+        $user->save();
+        return $this->resume();
     }
 }

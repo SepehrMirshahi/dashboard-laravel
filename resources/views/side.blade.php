@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item active  ">
-                <a class="nav-link" href="javascript:void(0)">
+                <a class="nav-link" href="{{url('/resume')}}">
                     <i class="material-icons">assignment</i>
                     <span>رزومه شما</span>
                 </a>
