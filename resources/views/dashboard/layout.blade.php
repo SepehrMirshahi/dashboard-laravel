@@ -5,7 +5,7 @@
 @section('main')
     <div class="col-md-8">
         @if($errors->any())
-            <div class="alert alert-danger alert-important">
+            <div class="alert alert-danger alert-important text-right">
                 <ul>
                     {!! implode('</li><li>',$errors->all()) !!}
                 </ul>

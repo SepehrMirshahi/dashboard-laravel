@@ -4,7 +4,7 @@
         <div class="card card-profile">
             <div class="card-body">
                 @if($errors->any())
-                    <div class="alert alert-danger alert-important">
+                    <div class="alert alert-danger alert-important text-right">
                         <ul>
                             {!! implode('</li><li>',$errors->all()) !!}
                         </ul>
